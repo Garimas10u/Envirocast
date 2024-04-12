@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ceebf5;
+    position: relative;
+}
+
+#maincover{
+    position: relative;
+    z-index: 10;
+}
+
+.heading{
+    font-size: 2rem;
+    margin: 2vw 10vw;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(31, 63, 117);
+}
+.navbar{
+    height: 12vh;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(225, 253, 236);
+    margin-bottom: 5vh;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    font-family: "Sulphur Point", sans-serif;
+
+}
+.left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: rgb(34, 134, 36);
+}
+.left img{
+    height: 90px;
+    width: 90px;
+    margin-left: 11vw;
+}
+
+.right ul {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 3vw;
+    font-weight: 500;
+    margin-right: 13vw;
+}
+
+.right ul li{
+    list-style: none;
+   
+}
+
+.right ul li a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color:rgb(34, 134, 36);
+}
+
+
+.cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10vw;
+    flex-wrap: wrap;
+    gap: 10px;
+    z-index: -1;
+    align-items: start;
+}
+
+.card {
+    width: 360px;
+    max-height: 400px;
+    box-shadow: 0 0 4px #d4ecff;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #d7f9dd;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    font-family: "Sulphur Point", sans-serif;
+}
+
+.card-header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.card-content {
+    padding: 12px;
+}
+
+.news-source {
+    margin-block: 12px;
+}
+.footer{
+    height: 150px;
+    width: 100%;
+    padding: 40px 40px;
+    background-color: #abe4c0;
+    position: absolute;
+    margin:0vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20vw;
+    
+}
+.foot-logo img{
+    height: 120px;
+    width: 120px;
+}
+.foot-list ul li {
+    list-style: none;
+}
+.foot-list ul li a{
+    font-size: 1.2rem;
+    color: rgb(2, 26, 26);
+}
+.foot-list ul li a:hover{
+    color: rgb(14, 233, 233);
+
+}

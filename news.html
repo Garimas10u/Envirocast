@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="news.css">
+    <title>News</title>
+</head>
+<body> 
+    <div id="maincover">
+        <nav class="navbar">
+            <div class="left">
+                <img src="images/logo.png" alt="" class="logo"> Envirocast
+            </div>
+            <div class="right">
+                <ul class="menu">
+                    <li><a href="./index.html">Forecast</a></li>
+                    <li><a href="./news.html">News</a></li>
+                    <li><a href="./enviro.html">Environment</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1 class="heading">News about Environment, Weather and More...</h1> 
+        <main>
+            <div class="cards-container container flex" id="cards-container"></div>
+        </main>
+        
+    
+        <template id="template-news-card"> 
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+                </div>
+                <div class="card-content">
+                    <h3 id="news-title">This is the Title</h3>
+                    <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
+                    <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae saepe quis voluptatum quisquam vitae doloremque facilis molestias quae ratione cumque!</p>
+                </div>
+            </div>
+         </template> 
+    
+    </div>
+     <script src="app.js"></script>      
+</body>
+</html>

@@ -1,0 +1,191 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Envirocast</title>
+</head>
+<body>
+    <div id="fixed-image"></div>
+    <div id="maincover">
+            <nav class="navbar">
+                <div class="left">
+                    <img src="images/logo.png" alt=""> Envirocast
+                </div>
+                <div class="right">
+                    <ul>
+                        <li><a href="./index.html">Forecast</a></li>
+                        <li><a href="./news.html">News</a></li>
+                        <li><a href="./enviro.html">Environment</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <section class="forecast-section">
+                <div class="search">
+                    <input type="text" class="search-bar" placeholder="Search City" spellcheck="false">
+                    <div class="search-icon
+                    "><i class="fa-solid fa-magnifying-glass"></i></div>
+                </div>
+                <br> <br>
+                    <div class="city-info" id="city-info">
+                        <h1 class="cityname" id="cityname">Delhi</h1>
+                    </div>
+                    <div class="cards-section">
+                        <div class="cards" id="cards">
+                            <h2>Air Quality</h2>
+                            <div class="aqi-info">
+                                <div class="aqi">
+                                    <span class="aqi-text">Poor</span>
+                                    <div class="aqi-fig">400</div>
+                                </div>
+                            </div>
+                            <div class="aqi-paramsection">
+                                <div class="aqi-params">
+                                   <div>CO: </div>
+                                    <div class="co-data">345</div>
+                                </div>
+                                <div class="aqi-params">
+                                   <div>PM2_5: </div>
+                                    <div class="pm1-2_5data">345</div>
+                                </div>
+                                <div class="aqi-params">
+                                   <div>PM10: </div>
+                                    <div class="pM10data">345</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cards" id="today-section">
+                            <h2>Weather Today</h2>
+                            <div class="weatherinfo">
+                                <div class="temperature-info">
+                                    <div class="param">
+                        
+                                        <i class="fa-solid fa-sun"></i>
+                                        <span class="description-text">Sunny</span>
+                                    </div>
+                                        <div class="temp"></div>
+                                </div>
+                                <div class="additional-info">
+                                    <div  class ="weath-info" id="wind-info">
+                                        <i class="fa-solid fa-wind"></i>
+                                        <div class="param">
+                                            <h3 class="wind-speed">4Km/Hr</h3>
+                                            <p class="wind-label">Wind</p>
+                                        </div>
+                                    </div>
+                                    <div class="weath-info" id="humidity-info">
+                                        <i class="fa-solid fa-droplet"></i>
+                                        <div class="param">
+                                            <h3 class="humidity">45%</h3>
+                                            <p class="humidity">Humidity</p>
+                                        </div>
+                                    </div>
+                                    <div  class="weath-info" id="visibility-info" >
+                                        <i class="fa-solid fa-eye"></i>
+                                        <div.param>
+                                          <h3 class="visibility-distance">10 Km</h3> 
+                                          <p class="visibility">Visibility</p>
+                                        </div.param>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                        <div class="cards">
+                            <h2>tommorow Forecast</h2>
+                            <div class="forecards-section">
+                                <div class="forecards">
+                                    <div class="sunrise">
+                                        <p >sunrise</p>
+                                        <p id="sun">sunrisetime</p>
+                                    </div>
+                                  
+                                    <div class="sunrise">
+                                        <p>sunset</p>
+                                        <p id="set">sunset</p>
+                                    </div>
+                                    <div class="sunrise">
+                                        <p>date</p>
+                                        <p id="date">date</p>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+    
+                        </div>
+                    </div>
+            </section>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" >
+                        <img src="images/weatherforecats.jpg" id="slide1"> <br>
+                        <h1>Recent <span>weather updates</span> and forecasts</h1>
+                    </div>
+                    <div class="swiper-slide" >
+                        <img src="images/news.jpg" id="slide2"> <br>
+                        <h1>Latest information about <span>environment, climate change</span> and more...</h1>
+                    </div>
+                    <div class="swiper-slide" >
+                        <img src="images/activities.jpg" id="slide3"> <br>  <h1>Know about steps to <span>create an impact</span> and more...</h1></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+        <div class="page3">
+            <div id="elem-container">
+                    <div id="elem1" class="elem"
+                        data-image="https://images.unsplash.com/photo-1564899535295-7b2057da608d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <div class="overlay"></div>
+                        <h2>Weather Forecast</h2>
+                    </div>
+                    <div class="elem"
+                        data-image="https://images.unsplash.com/photo-1578252931655-e54610a598ca?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <div class="overlay"></div>
+                        <h2>Pollution and Climate Change</h2>
+                    </div>
+                    <div class="elem"
+                        data-image="https://images.unsplash.com/photo-1569163139394-de4e5f43e5ca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <div class="overlay"></div>
+                        <h2>Your Impact</h2>
+                    </div>  
+            </div>
+        </div> 
+   </div>
+    <footer class="footer">
+        <div class="foot-logo">
+            <img src="images/logo.png" alt="">
+        </div>
+            <div class="foot-list">
+                <ul>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">About us</a></li>
+                    </ul>
+            </div>
+            <div class="foot-list">
+                <ul>
+                    <li><a href="">Investor Relations</a></li>
+                    <li><a href="">Terms of use</a></li>
+                </ul>
+            </div>
+            <div class="foot-list">
+                <ul>
+                    <li><a href="">Community </a></li>
+                    <li><a href="">Socials</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>   
+<script src="script.js"></script>
+</body>
+</html>

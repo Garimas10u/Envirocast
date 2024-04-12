@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ceebf5;
+    position: relative;
+}
+
+#maincover{
+    position: relative;
+    z-index: 10;
+}
+.navbar{
+    height: 12vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(225, 253, 236);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    font-family: "Sulphur Point", sans-serif;
+    z-index: 9;
+}
+.left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: rgb(34, 134, 36);
+}
+.left img{
+    height: 90px;
+    width: 90px;
+    margin-left: 11vw;
+}
+
+.right ul {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 3vw;
+    font-weight: 500;
+    margin-right: 13vw;
+}
+
+.right ul li{
+    list-style: none;
+   
+}
+
+.right ul li a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color:rgb(34, 134, 36);
+}
+.parallax{
+    height: 70vh;
+    max-width: 100%;
+    background:url(images/worldmap.png);
+    background-position:  right 60% top -40%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+
+}
+.parallax h1{
+    font-family: 'Poppins', sans-serif;
+    padding:14vh 10vh;
+    font-size: 3rem;
+    color: rgb(44, 138, 151);
+}
+.parallax span{
+    color: rgb(84, 159, 52);
+    font-size: 3.3rem;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1.2px;
+
+
+}
+
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  padding-top: 10vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.steps-card {
+  width: 24rem;
+  height: 28rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: black;
+  background-color:#7cb9c1;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+}
+  .steps-card img{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
+  }
+
+ .steps-content h2{
+    position: absolute;
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.9rem;
+    color: rgb(15, 35, 4);
+  }
+  
+  .steps-content p {
+    position: absolute;
+    opacity: 0;
+    font-size: 1.6rem;
+    text-align: left;
+    transition: opacity .3s ease-out;
+    inset: auto auto   100px 40px ;
+  }
+  .footer{
+    height: 150px;
+    width: 100%;
+    padding: 40px 40px;
+    background-color: #abe4c0;
+    position: absolute;
+    margin:0vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20vw;
+    
+}
+.foot-logo img{
+    height: 120px;
+    width: 120px;
+}
+.foot-list ul li {
+    list-style: none;
+}
+.foot-list ul li a{
+    font-size: 1.2rem;
+    color: rgb(2, 26, 26);
+}
+.foot-list ul li a:hover{
+    color: rgb(14, 174, 202);
+
+}
+ 
+
+
