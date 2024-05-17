@@ -10,6 +10,9 @@
 body{
     background-color: #ceebf5;
     position: relative;
+    height: 100%;
+    width: 100%;
+    
 }
 
 #maincover{
@@ -19,8 +22,8 @@ body{
 
 
 .navbar{
-    height: 12vh;
-    width: 100%;
+    max-height: 12vh;
+    min-width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,9 +70,14 @@ body{
     font-weight: 500;
     color:rgb(34, 134, 36);
 }
+.navmenu{
+   display: none; 
+}
+
+
 .forecast-section{
-    min-height: 85vh;
-    width: 100%;
+    max-height: 200vh;
+    min-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,6 +87,7 @@ body{
     background-position:  right 5% bottom 10%;
     background-repeat: no-repeat;
     margin-bottom: 10vh;
+    padding-top: 10vh;
     font-family: "Sulphur Point", sans-serif;
     text-transform: capitalize;
 }
@@ -113,58 +122,42 @@ body{
 }
 
 .cards-section{
-    min-height: 50vh;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
     gap: 2vw;
-    justify-content: center;
-    padding: 0px 2rem;
+
 }
 .cards{
-    height: 45vh ;
-    width: 25% ;
-    padding: 20px 10px ;
-    display: flex;
+    height: 100%;
     font-size: 18px;
+    padding: 20px;
     font-weight: 500;
-    flex-direction: column;
-    align-items: center;
     border-radius: 8px ;
-    color: rgb(23, 20, 20);
     background-color: rgba(81, 156, 49, 0.267);
     backdrop-filter: 10px;
     border: 2px solid rgb(250, 247, 247);
     transition: transform 0.5s;
 }
 i{
-    color: rgb(17, 113, 178);
+    color:rgb(5, 50, 80);
+    
     
 }
 .city-info{
     font-size: 2rem;
     margin-bottom: 1rem;
+    text-align: center;
 }
 .cards-section h2{
-    margin-bottom: 3px;
-}
-.weather-info, .param{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+    margin-bottom: 10px;
+    text-align: center;
 }
 .temperature-info{
     font-size: 1.6rem;
-    height: 106px;
-    width: 100%;
-    border-radius: 5px;
-    background-color: #0e0e0e1f;
-    backdrop-filter: 10px;
     display: flex;
-    margin-bottom: 5px;
+    margin-bottom: 5vh;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -175,71 +168,21 @@ i{
     justify-content: space-between;
     gap: 4px;
 }
-.weath-info{
-    height: 145px;
-    width: 110px;
-    border-radius: 5px;
-    background-color: #0e0e0e1f;
-    backdrop-filter: 10px;
-    display: flex;
-    padding: 2px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.forecards-section{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4px; 
-}
-.forecards{
-    height: 53px;
-    width: 329px;
-    border-radius: 5px;
-    background-color: #0e0e0e1f;
-    backdrop-filter: 10px;
-}
 .aqi{
-    font-size: 1.6rem;
-    height: 106px;
-    width: 329px;
-    border-radius: 5px;
-    background-color: #0e0e0e1f;
-    backdrop-filter: 10px;
-    display: flex;
-    margin-bottom: 5px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;  
-}
-.aqi-paramsection{
-    height:224px;
-    width:329px ;
-    border-radius: 5px;
-    background-color: #0e0e0e1f;
-    backdrop-filter: 10px;
-    display: flex;
-    margin-bottom: -9px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
 }
 .aqi-params{
-    width:329px ;
-    padding: 0px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between; 
 }
 
 .page3{
-    height: 60vh;
+    height: 45vh;
     width: 100%;
-    background: #CAEEFC;
+    color: rgb(187, 223, 247);
     padding: 4vw 0;
     margin-bottom: 40vh;
 }
@@ -247,6 +190,7 @@ i{
 .elem {
     height: 150px;
     width: 100%;
+    background: #b9e9cb;
     position: relative;
     border-bottom: 1px solid #38383864;
     overflow: hidden;
@@ -256,18 +200,18 @@ i{
 }
 
 .elem h2 {
-    font-size: 2.3vw;
+    font-size: 2rem;
     position: relative;
     padding-left: 3vw;
     z-index: 9;
-    color: #2c7848;
+    color: #06414a;
     font-family: 'Poppins', sans-serif;
 }
 
 .elem .overlay {
     height: 100%;
     width: 100%;
-    background-color: #abe4c0;
+    background-color: #c5f2d6;
     position: absolute;
     left: 0;
     top: -100%;
@@ -293,7 +237,7 @@ i{
 
 .swiper {
     width: 100%;
-    height: 95vh;
+    height: 85vh;
     padding-top: 0;
     position: relative;
     margin-bottom: 20vh;
@@ -302,7 +246,7 @@ i{
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #CAEEFC;
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -318,6 +262,7 @@ i{
   }
   .swiper-slide h1{
     color: #1e974a;
+    font-family: 'Poppins', sans-serif;
 
     font-size: 2.6rem;
   }
@@ -327,16 +272,18 @@ i{
   }
 
 .footer{
-    height: 150px;
-    width: 100%;
-    padding: 40px 40px;
+    min-height: 150px;
+    max-width: 100%;
     background-color: #abe4c0;
-    position: absolute;
-    margin:0vh;
+    position: relative;
+    bottom: 0;
+    left: 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 20vw;
+    gap: 10vw;
+    padding: 0px 5vw;
     
 }
 .foot-logo img{
@@ -366,4 +313,48 @@ i{
     display: flex;
     justify-content: space-around;
 }
+
+
+/* responsive */
+
+@media (max-width:950px){
+    .right ul{
+        display: none;
+    }
+    .navmenu{
+        display: block;
+        position: absolute;
+        color: rgb(123, 234, 123);
+        top: 5vh;
+        right: 10vw;
+    }
+    
+    .footer{
+        gap: 2vw;
+    }
+}
+@media (max-width:950px){
+    
+    .cards-section{
+        grid-template-columns: 1fr 1fr;
+    }
+   
+}
+@media (max-width:480px){
+    
+    .cards-section{
+        grid-template-columns: 1fr;
+    }
+    #fixed-image {
+        height: 100px;
+        width: 70px;
+    }
+    .footend{
+        display: none;
+    }
+}
+    
+
+
+
 
