@@ -9,7 +9,7 @@ let swiper = new Swiper(".mySwiper", {
   },
 });
 
-const API_KEY = "e3d12d00803649c2bdd71456251307";
+const API_KEY = "e3d12d00803649c2bdd71456251307"
 
 const cityInput  = document.querySelector(".search-bar");
 const searchBtn  = document.querySelector(".search-icon");

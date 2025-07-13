@@ -1,5 +1,5 @@
 
-const API_KEY = "08ea4909cecc48d9a60a5e29a0f395cd";
+const API_KEY = "192f88a04a484134bcb5f665f19d675c";
 const url = "https://newsapi.org/v2/everything?q=";
 
 window.addEventListener("load", () => fetchNews("weather"));
