@@ -91,56 +91,101 @@ body{
 
 }
 
-
 main {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px;
-  padding-top: 10vh;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 60px 40px;
   font-family: 'Poppins', sans-serif;
 }
 
-
 .steps-card {
-  width: 24rem;
-  height: 28rem;
-  border-radius: 10px;
-  overflow: hidden;
-  cursor: pointer;
   position: relative;
-  color: black;
-  background-color:#7cb9c1;
-  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 340px;
+  height: 28rem;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
-  .steps-card img{
-    position: absolute;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.9;
-    transition: opacity .2s ease-out;
+
+.steps-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+}
+
+.steps-card img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.85;
+  z-index: 0;
+  transition: 0.4s;
+}
+
+.steps-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent 65%);
+  z-index: 1;
+}
+
+.steps-content {
+  position: absolute;
+  bottom: 25px;
+  left: 20px;
+  z-index: 2;
+  color: white;
+  padding: 10px;
+}
+
+.steps-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #e1ffd4;
+}
+
+.steps-content p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #ffffff;
+  opacity: 0.95;
+  max-width: 90%;
+}
+
+
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
   }
 
- .steps-content h2{
-    position: absolute;
-    margin: 0;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 1.9rem;
-    color: rgb(15, 35, 4);
+  .steps-card {
+    max-width: 90%;
+    height: 26rem;
   }
-  
-  .steps-content p {
-    position: absolute;
-    opacity: 0;
+
+  .steps-content h2 {
     font-size: 1.6rem;
-    text-align: left;
-    transition: opacity .3s ease-out;
-    inset: auto auto   100px 40px ;
   }
+
+  .steps-content p {
+    font-size: 1rem;
+  }
+}
+
   .footer{
     height: 150px;
     width: 100%;
@@ -171,4 +216,110 @@ main {
 }
  
 
+.steps-card:hover img {
+  opacity: 0.6;
+  transform: scale(1.05);
+}
 
+.steps-card:hover .steps-content p {
+  opacity: 1;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.navbar a:hover {
+  color: #0f5132;
+  transition: color 0.3s ease-in-out;
+}
+
+.info-section {
+  padding: 60px 40px;
+  background-color: #d5f5e3;
+  font-family: 'Poppins', sans-serif;
+}
+
+.info-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #226422;
+}
+
+.info-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.info-card {
+  background-color: #b9eadc;
+  padding: 20px;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+}
+
+.cta {
+  background: linear-gradient(120deg, #b2f3a5, #84e1ad);
+  padding: 60px 40px;
+  text-align: center;
+  margin: 60px auto;
+  min-width: 100%;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.cta h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #073a1b;
+  margin-bottom: 15px;
+  animation: slideInUp 1s ease-in-out;
+}
+
+.cta p {
+  font-size: 1.25rem;
+  color: #1a3e29;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #2b7c69;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #1b4d1b;
+  transform: translateY(-3px);
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

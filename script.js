@@ -1,22 +1,6 @@
-
-function page3Animation() {
-    var elemC = document.querySelector("#elem-container")
-    var fixed = document.querySelector("#fixed-image")
-    elemC.addEventListener("mouseenter", function () {
-        fixed.style.display = "block"
-    })
-    elemC.addEventListener("mouseleave", function () {
-        fixed.style.display = "none"
-    })
-
-    var elems = document.querySelectorAll(".elem")
-    elems.forEach(function (e) {
-        e.addEventListener("mouseenter", function () {
-            var image = e.getAttribute("data-image")
-            fixed.style.backgroundImage = `url(${image})`
-        })
-    })
-}
+document.querySelector(".navmenu").addEventListener("click",()=>{
+  document.querySelector(".right ul").classList.toggle("show");
+});
 
 let swiper = new Swiper(".mySwiper", {
   navigation: {
@@ -25,64 +9,58 @@ let swiper = new Swiper(".mySwiper", {
   },
 });
 
-page3Animation();
-const cityname=document.getElementById('cityname');
-const searchInput = document.querySelector('.search-bar');
-const searchButton = document.querySelector('.search-icon');
+const API_KEY = "e3d12d00803649c2bdd71456251307";
 
+const cityInput  = document.querySelector(".search-bar");
+const searchBtn  = document.querySelector(".search-icon");
+const cityNameEl = document.getElementById("cityname");
+const tempEl     = document.querySelector(".temp");
+const descEl     = document.querySelector(".description-text");
+const windEl     = document.querySelector(".wind-speed");
+const humidityEl = document.querySelector("#humidity-info h3");
+const visEl      = document.querySelector(".visibility-distance");
+const sunEl      = document.getElementById("sun");
+const setEl      = document.getElementById("set");
+const maxtEl     = document.getElementById("maxt");
+const mintEl     = document.getElementById("mint");
+const coEl       = document.querySelector(".co-data");
+const pm25El     = document.querySelector(".pm1-2_5data");
+const pm10El     = document.querySelector(".pM10data");
 
+async function fetchWeather(city = "Delhi") {
+  try {
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${encodeURIComponent(city)}&days=2&aqi=yes&alerts=no`;
+    const res = await fetch(url);
+    const data = await res.json();
 
-// Add event listener to search button for click event
-searchButton.addEventListener('click', async() => {
-    let searchTerm = searchInput.value;
-    cityname.innerText=searchTerm;
-    
+    const current = data.current;
+    const today = data.forecast.forecastday[0];
+    const tomorrow = data.forecast.forecastday[1];
 
-    let url2="http://api.weatherapi.com/v1/current.json?key=db1b9ae8537943838c9120832241002&q=";
-    
-  let val=document.querySelector(".co-data");
-  let val2=document.querySelector(".pm1-2_5data");
-  let val3=document.querySelector(".pM10data");
-  let val4=document.querySelector(".description-text");
-  let val5=document.querySelector(".temp");
-  let val6=document.querySelector(".wind-speed");
-  let val7=document.querySelector(".humidity");
-  let val8=document.querySelector(".visibility-distance");
-  let val9=document.querySelector("#sun");
-  let val10=document.querySelector("#set");
-  let val11=document.querySelector("#date");
-  let ans2,ans3,lat2,lon2;
-    async function call2(){
-         ans2=await fetch(`${url2}${searchTerm}&aqi=yes`);
-         ans3=await ans2.json();
-       
-            val.innerText=`${ans3.current.air_quality.co}`;
-            val2.innerText=`${ans3.current.air_quality.pm2_5}`;
-            val3.innerText=`${ans3.current.air_quality.pm10}`;
-            val4.innerText=`${ans3.current.condition.text}`;
-            val5.innerText=`${ans3.current.temp_c}°C`;
-            val6.innerText=`${ans3.current.wind_kph}KM/HR`;
-            val7.innerText=`${ans3.current.humidity}%`;
-            val8.innerText=`${ans3.current.vis_km} KM`;
-            
-            
-    }
-    call2();
-     let url3="http://api.weatherapi.com/v1/forecast.json?key=db1b9ae8537943838c9120832241002&q="
-    
-     async  function call3(){
-        let ans4=await fetch(`${url3}${searchTerm}&days=7&aqi=no&alerts=no`);
-        let ans5=await ans4.json();
-        console.log(ans5);
-        val9.innerText=`${ans5.forecast.forecastday[0].astro.sunrise}`;
-        val10.innerText=`${ans5.forecast.forecastday[0].astro.sunset}`;
-        val11.innerText=`${ans5.forecast.forecastday[1].date}`;
-     }
-     call3();
-    
-});
+    cityNameEl.textContent = data.location.name;
+    tempEl.textContent = `${current.temp_c}°C`;
+    descEl.textContent = current.condition.text;
+    windEl.textContent = `${current.wind_kph} Km/Hr`;
+    humidityEl.textContent = `${current.humidity}%`;
+    visEl.textContent = `${current.vis_km} Km`;
 
+    coEl.textContent = current.air_quality.co.toFixed(2);
+    pm25El.textContent = current.air_quality.pm2_5.toFixed(2);
+    pm10El.textContent = current.air_quality.pm10.toFixed(2);
 
+    sunEl.textContent = tomorrow.astro.sunrise;
+    setEl.textContent = tomorrow.astro.sunset;
+    maxtEl.textContent = `${tomorrow.day.maxtemp_c}°C`;
+    mintEl.textContent = `${tomorrow.day.mintemp_c}°C`;
 
+  } catch (err) {
+    alert("City not found or API error.");
+    console.error(err);
+  }
+}
 
+function run() {
+  const city = cityInput.value.trim() || "Delhi";
+  fetchWeather(city);
+}
 

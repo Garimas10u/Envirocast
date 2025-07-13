@@ -16,13 +16,6 @@ body{
     position: relative;
     z-index: 10;
 }
-
-.heading{
-    font-size: 2rem;
-    margin: 2vw 10vw;
-    font-family: 'Poppins', sans-serif;
-    color: rgb(31, 63, 117);
-}
 .navbar{
     height: 12vh;
     max-width: 100%;
@@ -72,44 +65,98 @@ body{
     color:rgb(34, 134, 36);
 }
 
+.heading {
+  font-size: 2.4rem;
+  margin: 2vw 10vw;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(31, 63, 117);
+  text-align: center;
+  line-height: 1.4;
+}
 
 .cards-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 10vw;
-    flex-wrap: wrap;
-    gap: 10px;
-    z-index: -1;
-    align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 20px 10vw 60px;
 }
 
 .card {
-    width: 360px;
-    max-height: 400px;
-    box-shadow: 0 0 4px #d4ecff;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #d7f9dd;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    font-family: "Sulphur Point", sans-serif;
+  width: 300px;
+  height: 360px;
+  background-color: #d7f9dd;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 80, 20, 0.12);
+  overflow: hidden;
+  font-family: 'Sulphur Point', sans-serif;
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s ease, box-shadow .3s ease;
+  cursor: pointer;
+  z-index: -1;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 80, 20, 0.25);
+}
+
+.card-header {
+  flex: 0 0 150px;
+  overflow: hidden;
 }
 
 .card-header img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-content {
-    padding: 12px;
+  flex: 1 1 auto;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 2px;
 }
 
-.news-source {
-    margin-block: 12px;
+.card-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #226422;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
+
+.card-content .news-source {
+  font-size: 0.85rem;
+  color: #356d3b;
+  margin-bottom: 10px;
+}
+
+.card-content .news-desc {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #1c1c1c;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 92%;
+    height: 360px;
+  }
+
+  .cards-container {
+    gap: 22px;
+  }
+}
+
 .footer{
     height: 150px;
     width: 100%;

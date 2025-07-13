@@ -31,8 +31,7 @@
             <section class="forecast-section">
                 <div class="search">
                     <input type="text" class="search-bar" placeholder="Search City" spellcheck="false">
-                    <div class="search-icon
-                    "><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                 </div>
                 <br> <br>
                     <div class="city-info" id="city-info">
@@ -41,12 +40,6 @@
                     <div class="cards-section">
                         <div class="cards" id="cards">
                             <h2>Air Quality</h2>
-                            <div class="aqi-info">
-                                <div class="aqi">
-                                    <span class="aqi-text">Poor</span>
-                                    <div class="aqi-fig">400</div>
-                                </div>
-                            </div>
                             <div class="aqi-paramsection">
                                 <div class="aqi-params">
                                    <div>CO: </div>
@@ -59,6 +52,13 @@
                                 <div class="aqi-params">
                                    <div>PM10: </div>
                                     <div class="pM10data">345</div>
+                                </div>
+                                <div  class ="weath-info" id="wind-info">
+                                        <i class="fa-solid fa-wind"></i>
+                                        <div class="param">
+                                            <h3 class="wind-speed">4Km/Hr</h3>
+                                            <p class="wind-label">Wind</p>
+                                        </div>
                                 </div>
                             </div>
                         </div>
@@ -74,13 +74,7 @@
                                         <div class="temp"></div>
                                 </div>
                                 <div class="additional-info">
-                                    <div  class ="weath-info" id="wind-info">
-                                        <i class="fa-solid fa-wind"></i>
-                                        <div class="param">
-                                            <h3 class="wind-speed">4Km/Hr</h3>
-                                            <p class="wind-label">Wind</p>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="weath-info" id="humidity-info">
                                         <i class="fa-solid fa-droplet"></i>
                                         <div class="param">
@@ -104,17 +98,21 @@
                             <div class="forecards-section">
                                 <div class="forecards">
                                     <div class="sunrise">
-                                        <p >sunrise</p>
+                                        <p >Sunrise</p>
                                         <p id="sun">sunrisetime</p>
                                     </div>
                                   
                                     <div class="sunrise">
-                                        <p>sunset</p>
+                                        <p>Sunset</p>
                                         <p id="set">sunset</p>
                                     </div>
                                     <div class="sunrise">
-                                        <p>date</p>
-                                        <p id="date">date</p>
+                                        <p>Max</p>
+                                        <p id="maxt">date</p>
+                                    </div>
+                                    <div class="sunrise">
+                                        <p>Min</p>
+                                        <p id="mint">date</p>
                                     </div>
                                 </div>
                                 
@@ -124,42 +122,63 @@
                         </div>
                     </div>
             </section>
+            <section class="climate-snap">
+            <h2 class="climate-heading">Climate Snapshot · 2025</h2>
+
+            <div class="climate-grid">
+                <div class="climate-card">
+                <h3>Global Temp ↑</h3>
+                <p class="climate-value">+1.2 °C</p>
+                <span class="climate-desc">vs. pre‑industrial baseline</span>
+                </div>
+
+                <div class="climate-card">
+                <h3>CO₂ in Atmosphere</h3>
+                <p class="climate-value">421 ppm</p>
+                <span class="climate-desc">March 2025 average (Mauna Loa)</span>
+                </div>
+
+                <div class="climate-card">
+                <h3>Sea‑level Rise</h3>
+                <p class="climate-value">+102 mm</p>
+                <span class="climate-desc">since 1993 satellite record</span>
+                </div>
+
+                <div class="climate-card">
+                <h3>Renewables Share</h3>
+                <p class="climate-value">30 %</p>
+                <span class="climate-desc">of global electricity, 2024</span>
+                </div>
+            </div>
+            </section>
+            
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" >
-                        <img src="https://www.skymetweather.com/themes/skymet/images/satellite/insat/2024/05/17/Satellite-Image-India-17-May-2024-01:00.jpg?version=240517075142" id="slide1"> <br>
+                    <div class="swiper-slide">
+                    <img src="images/forecasts.jpg" alt="Satellite Weather">
+                    <div class="slide-caption">
                         <h1>Recent <span>weather updates</span> and forecasts</h1>
                     </div>
-                    <div class="swiper-slide" >
-                        <img src="images/news.jpg" id="slide2"> <br>
+                    </div>
+
+                    <div class="swiper-slide">
+                    <img src="images/news.jpg" alt="Environmental News">
+                    <div class="slide-caption">
                         <h1>Latest information about <span>environment, climate change</span> and more...</h1>
                     </div>
-                    <div class="swiper-slide" >
-                        <img src="images/activities.jpg" id="slide3"> <br>  <h1>Know about steps to <span>create an impact</span> and more...</h1></div>
+                    </div>
+
+                    <div class="swiper-slide">
+                    <img src="images/activities.jpg" alt="Impact Activities">
+                    <div class="slide-caption">
+                        <h1>Know about steps to <span>create an impact</span> and more...</h1>
+                    </div>
+                    </div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
 
-        <div class="page3">
-            <div id="elem-container">
-                    <div id="elem1" class="elem"
-                        data-image="https://images.unsplash.com/photo-1564899535295-7b2057da608d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                        <div class="overlay"></div>
-                        <h2>Weather Forecast</h2>
-                    </div>
-                    <div class="elem"
-                        data-image="https://images.unsplash.com/photo-1578252931655-e54610a598ca?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                        <div class="overlay"></div>
-                        <h2>Pollution and Climate Change</h2>
-                    </div>
-                    <div class="elem"
-                        data-image="https://images.unsplash.com/photo-1569163139394-de4e5f43e5ca?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-                        <div class="overlay"></div>
-                        <h2>Your Impact</h2>
-                    </div>  
-            </div>
-        </div> 
         <footer class="footer">
             <div class="foot-logo">
                 <img src="images/logo.png" alt="">
