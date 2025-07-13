@@ -1,5 +1,5 @@
 
-const API_KEY = "192f88a04a484134bcb5f665f19d675c";
+const NEWS_API_KEY = "192f88a04a484134bcb5f665f19d675c";
 const url = "https://newsapi.org/v2/everything?q=";
 
 window.addEventListener("load", () => fetchNews("weather"));
@@ -9,7 +9,7 @@ function reload() {
 }
 
 async function fetchNews(query) {
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+    const res = await fetch(`${url}${query}&apiKey=${NEWS_API_KEY}`);
     const data = await res.json();
     bindData(data.articles);
     console.log(data.articles);
